@@ -4,7 +4,7 @@ const cors = require('cors');
 
 
 const mercadopago = require('mercadopago');
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 const app = express();
 app.use(express.json());
@@ -45,5 +45,5 @@ app.post('/', (req, res) => {
 
 
 app.listen(PORT, () => {
-    console.log("SERVIDOR INICIADO EN PUERTO 3000");
+    console.log("SERVIDOR INICIADO EN PUERTO", PORT);
 })
